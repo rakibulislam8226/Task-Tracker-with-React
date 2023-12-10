@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddForm from "./components/AddForm";
+import Navbar from "./components/Navbar";
 
 
 function App() {
@@ -38,11 +41,15 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <Header  onAdd={() => setShowAddForm(!showAddForm)} showAdd={showAddForm} />
-      {showAddForm && <AddForm onAdd={addTask} />}
-      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder} />) : "No Task to show."}
-    </div>
+    <Router>
+      <Navbar />
+      <div className="container">
+
+        <Header onAdd={() => setShowAddForm(!showAddForm)} showAdd={showAddForm} />
+        {showAddForm && <AddForm onAdd={addTask} />}
+        {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder} />) : "No Task to show."}
+      </div>
+    </Router>
   )
 }
 
