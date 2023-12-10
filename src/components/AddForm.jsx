@@ -8,6 +8,8 @@ export default function AddForm({ onAdd }) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [reminder, setReminder] = useState(false)
+    const [emailError, setEmailError] = useState('');
+
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -16,6 +18,14 @@ export default function AddForm({ onAdd }) {
             alert("Name should not be blank.")
             return
         }
+
+        if (!email) {
+            setEmailError('Email is required.');
+            return;
+        }
+
+        // Clear previous email error
+        setEmailError('');
 
         // Display success toast
         toast.success('Task created successfully!', {
@@ -54,6 +64,7 @@ export default function AddForm({ onAdd }) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
+                {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
             </div>
             <div className='form-control form-control-check'>
                 <label>Set Reminder</label>
@@ -67,5 +78,5 @@ export default function AddForm({ onAdd }) {
 
             <input type='submit' value='Save Task' className='btn btn-block' />
         </form>
-    )
+    );
 }

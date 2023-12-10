@@ -123,8 +123,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #3498db; /* Change to your preferred background color */
-  color: #fff; /* Change to your preferred text color */
+  background-color: #3498db; 
+  color: #fff; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -153,7 +153,7 @@ footer {
 }
 
 .nav-item a:hover {
-  color: #f1c40f; /* Change to your preferred hover color */
+  color: #f1c40f;
 }
 
 .navbar-actions {
@@ -172,8 +172,8 @@ footer {
 }
 
 .login-button:hover {
-  background-color: #fff; /* Change to your preferred hover background color */
-  color: #3498db; /* Change to your preferred hover color */
+  background-color: #fff; 
+  color: #3498db; 
 }
 
 .navbar-toggle {
@@ -200,7 +200,7 @@ footer {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #3498db; /* Change to your preferred background color */
+    background-color: #3498db; 
     position: absolute;
     top: 60px;
     left: 0;
@@ -222,7 +222,7 @@ footer {
   }
 
   .navbar-nav.open .nav-item a:hover {
-    color: #f1c40f; /* Change to your preferred hover color */
+    color: #f1c40f; 
   }
 }
 
