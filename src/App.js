@@ -6,7 +6,7 @@ import AddForm from "./components/AddForm";
 
 
 function App() {
-  const [showAddForm, setShowAddForm] = useState(true)
+  const [showAddForm, setShowAddForm] = useState(false)
 
   const [tasks, setTasks] = useState(
     [
