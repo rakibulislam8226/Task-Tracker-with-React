@@ -1,11 +1,13 @@
 import { useState } from "react";
 
+import { toast } from 'react-toastify';
+
 
 export default function AddForm({ onAdd }) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [reminder, setReminder] = useState (false)
+    const [reminder, setReminder] = useState(false)
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +16,16 @@ export default function AddForm({ onAdd }) {
             alert("Name should not be blank.")
             return
         }
+
+        // Display success toast
+        toast.success('Task created successfully!', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+        });
 
         onAdd({ name, email, reminder })
 
